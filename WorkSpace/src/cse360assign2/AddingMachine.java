@@ -8,21 +8,31 @@
 package cse360assign2;
 
 public class AddingMachine {
+	
 	private int total;
+	StringBuffer history;
+	
 	public AddingMachine () {
-		total = 0;  // not needed - included for clarity
+		total = 0;  
+		history = new StringBuffer("0");
 		}
 	public int getTotal () {
-		return 0;
+		return total;
 		}
 	public void add (int value) {
-		
+		total = total + value; //adds 
+		history.append(" + " + value);
 		}
 	public void subtract (int value) {
+		total = total - value;
+		history.append(" - " + value);
+		}
+	public String toString () {
+		return history.toString();
 		
 		}
-	public String toString () {return "";}public void clear() {
-		
+	public void clear() {
+		total = 0;
 	}
 	
 }
